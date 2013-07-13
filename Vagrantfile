@@ -14,9 +14,9 @@ Vagrant.configure("2") do |config|
   # config.vm.synced_folder "../data", "/vagrant_data"
 
   config.vm.define :lb do |lb_config|
-    lb_config.vm :private_network, ip: "192.168.10.11"
+    lb_config.vm.network :private_network, ip: "192.168.10.11"
     lb_config.vm.box = "precise64"
-    lb_config.vm.host_name = "jk_lb_1"
+    lb_config.vm.hostname = "jk-lb-1"
     lb_config.vm.network :forwarded_port, guest: 80, host: 8080
     lb_config.ssh.timeout = 300
     lb_config.ssh.max_tries = 300
@@ -28,9 +28,9 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define :app1 do |app_config|
-    app_config.vm :private_network, ip: "192.168.10.21"
+    app_config.vm.network :private_network, ip: "192.168.10.21"
     app_config.vm.box = "precise64"
-    app_config.vm.host_name = "jk_app_1"
+    app_config.vm.hostname = "jk-app-1"
   # app_config.vm.network :forwarded_port, guest: 80, host: 8081
   # app_config.vm.network :forwarded_port, guest: 3000, host: 8091
     app_config.ssh.timeout = 300
@@ -43,9 +43,9 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define :app2 do |app_config|
-    app_config.vm :private_network, ip: "192.168.10.22"
+    app_config.vm.network :private_network, ip: "192.168.10.22"
     app_config.vm.box = "precise64"
-    app_config.vm.host_name = "jk_app_2"
+    app_config.vm.hostname = "jk-app-2"
   # app_config.vm.network :forwarded_port, guest: 80, host: 8082
   # app_config.vm.network :forwarded_port, guest: 3000, host: 8092
     app_config.ssh.timeout = 300
@@ -58,9 +58,9 @@ Vagrant.configure("2") do |config|
   end
 
   #  config.vm.define :db do |db_config|
-  #    db_config.vm :private_network, ip: "192.168.10.31"
+  #    db_config.vm.network :private_network, ip: "192.168.10.31"
   #    db_config.vm.box = "precise64"
-  #    db_config.vm.host_name = "jk_db_1"
+  #    db_config.vm.hostname = "jk-db-1"
   #    db_config.ssh.timeout = 300
   #    db_config.ssh.max_tries = 300
   #    db_config.vm.provision :puppet do |puppet|
