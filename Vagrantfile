@@ -13,6 +13,8 @@ Vagrant.configure("2") do |config|
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
 
+  config.vm.provision :shell, :inline => "apt-get update --fix-missing"
+
   config.vm.define :lb do |lb_config|
     lb_config.vm.network :private_network, ip: "192.168.10.11"
     lb_config.vm.box = "precise64"
@@ -31,8 +33,8 @@ Vagrant.configure("2") do |config|
     app_config.vm.network :private_network, ip: "192.168.10.21"
     app_config.vm.box = "precise64"
     app_config.vm.hostname = "jk-app-1"
-  # app_config.vm.network :forwarded_port, guest: 80, host: 8081
-  # app_config.vm.network :forwarded_port, guest: 3000, host: 8091
+    app_config.vm.network :forwarded_port, guest: 80, host: 8081
+    app_config.vm.network :forwarded_port, guest: 3000, host: 8091
     app_config.ssh.timeout = 300
     app_config.ssh.max_tries = 300
     app_config.vm.provision :puppet do |puppet|
@@ -46,8 +48,8 @@ Vagrant.configure("2") do |config|
     app_config.vm.network :private_network, ip: "192.168.10.22"
     app_config.vm.box = "precise64"
     app_config.vm.hostname = "jk-app-2"
-  # app_config.vm.network :forwarded_port, guest: 80, host: 8082
-  # app_config.vm.network :forwarded_port, guest: 3000, host: 8092
+    app_config.vm.network :forwarded_port, guest: 80, host: 8082
+    app_config.vm.network :forwarded_port, guest: 3000, host: 8092
     app_config.ssh.timeout = 300
     app_config.ssh.max_tries = 300
     app_config.vm.provision :puppet do |puppet|
