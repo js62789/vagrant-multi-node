@@ -1,0 +1,78 @@
+@import "theme.less";
+
+.app {
+  font-size: 16px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-image: url('/img/tweed.png');
+  text-align: center;
+}
+
+.app-container {
+  .shadow(40px, 0.8);
+}
+
+.app-header {
+  text-align: left;
+  position: relative;
+  background-color: rgba(255,255,255,0.9);
+  border-bottom: 5px solid @palette-color1;
+}
+
+.app-masthead {
+  position: relative;
+  height: 500px;
+}
+
+.app-content {
+  background-color: rgba(255,255,255,0.9);
+}
+
+.app-footer {
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  color: #ddd;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.logo {
+  display: inline-block;
+  text-align: center;
+  height: 80px;
+  line-height: 80px;
+  width: 200px;
+  background-color: #ccc;
+}
+
+.nav {
+  position: relative;
+  display: inline-block;
+}
+
+  .nav-link {
+    display: inline-block;
+    height: 80px;
+    line-height: 80px;
+    padding: 0 40px;
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      background-color: rgba(0,0,0,0.02);
+      color: @palette-color2;
+    }
+  }
+
+
+.app-slogan {
+  display: block;
+  text-align: center;
+  font-style: italic;
+  background-color: #fff;
+  font-size: 1.6em;
+}
+
+.app-slogan,
+.app-coming {
+  padding: 40px 120px;
+}

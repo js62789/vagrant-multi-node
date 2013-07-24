@@ -16,7 +16,7 @@ html.no-js
     meta(name='viewport', content='width=device-width')
     link(rel='stylesheet', href='css/vagrant-blog.css')
     //-script(src='javascripts/vendor/modernizr-2.6.2.min.js')
-  body
+  body.app
     //if lt IE 7
       p.chromeframe
         | You are using an&nbsp;
@@ -26,9 +26,10 @@ html.no-js
         | &nbsp;or&nbsp;
         a(href='http://www.google.com/chromeframe/?redirect=true') activate Google Chrome Frame
         | &nbsp;to improve your experience.
+
     block content
 
     script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
     script
-      window.jQuery || document.write('<script src="js/lib/jquery-1.9.1.min.js"><\\/script>')
-    script(src='js/vagrant-node.js')
+      window.jQuery || document.write('<script src="/js/lib/jquery-1.10.2.min.js"><\\/script>')
+    script(src='js/vagrant-blog.js')
