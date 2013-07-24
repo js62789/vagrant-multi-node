@@ -30,6 +30,10 @@ app.get('/', function (req, res) {
   res.render('index', {"hostname": hostname});
 });
 
+app.get('/blog', function (req, res) {
+  res.render('blog', {"hostname": hostname});
+});
+
 server.listen(port, function () {
   console.log('Server running at http://127.0.0.1:' + port + '/');
 });
