@@ -1,3 +1,7 @@
+.overcast (@alpha1: 0, @alpha2: 0.2) {
+  .gradient(rgba(0,0,0,@alpha1), rgba(0,0,0,@alpha2));
+}
+
 .text-shadow (@string: 0 1px 3px rgba(0, 0, 0, 0.25)) {
   text-shadow: @string;
 }
@@ -8,16 +12,22 @@
   box-shadow:         @string;
 }
 
-.drop-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
-  -webkit-box-shadow: @x @y @blur @spread rgba(0, 0, 0, @alpha);
-  -moz-box-shadow:  @x @y @blur @spread rgba(0, 0, 0, @alpha);
-  box-shadow:   @x @y @blur @spread rgba(0, 0, 0, @alpha);
+.dual-shadow (@shadow1, @shadow2) {
+  -webkit-box-shadow: @shadow1, @shadow2;
+  -moz-box-shadow:    @shadow1, @shadow2;
+  box-shadow:         @shadow1, @shadow2;
 }
 
-.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
-  -webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
-  -moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
-  box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+.drop-shadow (@x: 0, @y: 1px, @blur: 3px, @alpha: 0.1) {
+  -webkit-box-shadow: @x @y @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow:  @x @y @blur rgba(0, 0, 0, @alpha);
+  box-shadow:   @x @y @blur rgba(0, 0, 0, @alpha);
+}
+
+.inner-shadow (@x: 0, @y: 1px, @blur: 3px, @alpha: 0.1) {
+  -webkit-box-shadow: inset @x @y @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow:    inset @x @y @blur rgba(0, 0, 0, @alpha);
+  box-shadow:         inset @x @y @blur rgba(0, 0, 0, @alpha);
 }
 
 .box-sizing (@type: border-box) {

@@ -29,11 +29,14 @@ html.no-js
           a(href='http://www.google.com/chromeframe/?redirect=true') activate Google Chrome Frame
           | &nbsp;to improve your experience.
       block header
-        header
+        header.app-header
+          nav
+            a(href='/') Home
+            a(href='/blog') Blog
       block content
 
       block footer
-        footer
+        footer.app-footer
       block scripts
       script(src='//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js')
       script

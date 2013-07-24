@@ -1,11 +1,37 @@
 extends master
 
 block content
+  .blog_sidebar
+    .blog_search
+      input(type='text', placeholder='Type a keyword here')
+      input(type='button', value='Search')
+    ul.articles_list
+      h1.articles_list-title Popular
+      li.articles_list-item 
+        a.articles_list-item_link(href='#')
+          .articles_list-item-title Learning Management System
+      li.articles_list-item 
+        a.articles_list-item_link(href='#')
+          .articles_list-item-title Learning Management System
+      li.articles_list-item 
+        a.articles_list-item_link(href='#')
+          .articles_list-item-title Learning Management System
+    ul.articles_list
+      h1.articles_list-title Recent
+      li.articles_list-item 
+        a.articles_list-item_link(href='#')
+          .articles_list-item-title Learning Management System
+      li.articles_list-item 
+        a.articles_list-item_link(href='#')
+          .articles_list-item-title Learning Management System
+      li.articles_list-item 
+        a.articles_list-item_link(href='#')
+          .articles_list-item-title Learning Management System
   .blog_articles
     article.article
       header.article-header
         h1 Learning Management Systems
-        p posted
+        p posted on
           time(pubdate)  2009-10-09
           |  by
           span.article-author  jsmith
@@ -18,37 +44,27 @@ block content
       section.article_comments
         h2 Comments
         article.comment
-          .media
-          .media-img
-            img.comment-avatar
-          .media-body
-            header.comment-header
-              span.comment-author Apple Lover
-              time(pubdate, datetime='2009-10-10T19:10-08:00')  ~1 hour ago
-            p.comment-body I love apples, my favorite kind are Granny Smiths
-            .comment-replies
-              article.comment
-                .media
-                .media-img
-                  img.comment-avatar
-                .media-body
-                  header.comment-header
-                    span.comment-author Apple Lover
-                    time(pubdate, datetime='2009-10-10T19:10-08:00')  ~1 hour ago
-                  p.comment-body I love apples, my favorite kind are Granny Smiths
+          .media.comment-media
+            .media-img
+              img.comment-avatar
+            .media-body
+              header.comment-header
+                span.comment-author Apple Lover
+                time(pubdate, datetime='2009-10-10T19:10-08:00')  ~1 hour ago
+              p.comment-body I love apples, my favorite kind are Granny Smiths
         article.comment
-          .media
-          .media-img
-            img.comment-avatar
-          .media-body
-            header.comment-header
-              span.comment-author Apple Lover
-              time(pubdate, datetime='2009-10-10T19:10-08:00')  ~1 hour ago
-            p.comment-body I love apples, my favorite kind are Granny Smiths
+          .media.comment-media
+            .media-img
+              img.comment-avatar
+            .media-body
+              header.comment-header
+                span.comment-author Apple Lover
+                time(pubdate, datetime='2009-10-10T19:10-08:00')  ~1 hour ago
+              p.comment-body I love apples, my favorite kind are Granny Smiths
     article.article
       header.article-header
         h1 Learning Management Systems
-        p posted
+        p posted on
           time(pubdate)  2009-10-09
           |  by
           span.article-author  jsmith
@@ -61,17 +77,17 @@ block content
       section.article_comments
         h2 Comments
         article.comment
-          .media
-          .media-img
-            img.comment-avatar
-          .media-body
-            header.comment-header
-              span.comment-author Apple Lover
-              time(pubdate, datetime='2009-10-10T19:10-08:00')  ~1 hour ago
-            p.comment-body I love apples, my favorite kind are Granny Smiths
-            .comment-replies
-              article.comment
-                .media
+          .media.comment-media
+            .media-img
+              img.comment-avatar
+            .media-body
+              header.comment-header
+                span.comment-author Apple Lover
+                time(pubdate, datetime='2009-10-10T19:10-08:00')  ~1 hour ago
+              p.comment-body I love apples, my favorite kind are Granny Smiths
+          .comment-replies
+            article.comment
+              .media.comment-media
                 .media-img
                   img.comment-avatar
                 .media-body
@@ -80,11 +96,11 @@ block content
                     time(pubdate, datetime='2009-10-10T19:10-08:00')  ~1 hour ago
                   p.comment-body I love apples, my favorite kind are Granny Smiths
         article.comment
-          .media
-          .media-img
-            img.comment-avatar
-          .media-body
-            header.comment-header
-              span.comment-author Apple Lover
-              time(pubdate, datetime='2009-10-10T19:10-08:00')  ~1 hour ago
-            p.comment-body I love apples, my favorite kind are Granny Smiths
+          .media.comment-media
+            .media-img
+              img.comment-avatar
+            .media-body
+              header.comment-header
+                span.comment-author Apple Lover
+                time(pubdate, datetime='2009-10-10T19:10-08:00')  ~1 hour ago
+              p.comment-body I love apples, my favorite kind are Granny Smiths
