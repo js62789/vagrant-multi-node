@@ -48,13 +48,22 @@ module.exports = function (grunt) {
         files: {
           'public/css/<%= pkg.name %>.css': 'src/styles/app.less'
         }
+      },
+      admin: {
+        files: {
+          'public/css/<%= pkg.name %>-admin.css': 'src/styles/admin.less'
+        }
       }
     },
     
     concat: {
-      js: {
-        src: 'src/js/**/*.js',
+      app: {
+        src: ['src/js/src/**/*.js', 'src/js/app/**/*.js'],
         dest: 'public/js/<%= pkg.name %>.js'
+      },
+      admin: {
+        src: ['src/js/src/**/*.js', 'src/js/admin/**/*.js'],
+        dest: 'public/js/<%= pkg.name %>-admin.js'
       }
     },
     
@@ -62,9 +71,14 @@ module.exports = function (grunt) {
       options: {
         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
       },
-      js: {
+      app: {
         files: {
-          'public/js/<%= pkg.name %>.min.js': ['<%= concat.js.dest %>']
+          'public/js/<%= pkg.name %>.min.js': ['<%= concat.app.dest %>']
+        }
+      },
+      admin: {
+        files: {
+          'public/js/<%= pkg.name %>-admin.min.js': ['<%= concat.admin.dest %>']
         }
       }
     },
@@ -75,15 +89,20 @@ module.exports = function (grunt) {
           banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */'
         },
         files: {
-          'public/css/<%= pkg.name %>.min.css': 'public/css/<%= pkg.name %>.css'
+          'public/css/<%= pkg.name %>.min.css': 'public/css/<%= pkg.name %>.css',
+          'public/css/<%= pkg.name %>-admin.min.css': 'public/css/<%= pkg.name %>-admin.css'
         }
       }
     },
     
     watch: {
-      js: {
-        files: '<%= concat.js.src %>',
-        tasks: ['concat', 'uglify']
+      app_js: {
+        files: '<%= concat.app.src %>',
+        tasks: ['concat:app', 'uglify:app']
+      },
+      admin_js: {
+        files: '<%= concat.admin.src %>',
+        tasks: ['concat:admin', 'uglify:admin']
       },
       css: {
         files: ['src/styles/**/*.less', 'src/styles/**/*.css'],

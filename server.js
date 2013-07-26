@@ -34,6 +34,14 @@ app.get('/blog', function (req, res) {
   res.render('blog', {"hostname": hostname});
 });
 
+app.get('/admin', function (req, res) {
+  res.render('admin');
+});
+
+app.get('/admin/articles', function (req, res) {
+  res.render('admin_articles');
+});
+
 server.listen(port, function () {
   console.log('Server running at http://127.0.0.1:' + port + '/');
 });
